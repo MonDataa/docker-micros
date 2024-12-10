@@ -58,3 +58,22 @@ sudo cat /var/lib/docker/volumes/microservices_project_chunk_data/_data/checksum
 [sudo] password for momoo: 
 [{"input": "test-data", "algorithm": "sha256", "checksum": "a186000422feab857329c684e9fe91412b1a5db084100b37a98cfc95b62aa867"}, {"input": "test-data", "algorithm": "sha256", "checksum": "a186000422feab857329c684e9fe91412b1a5db084100b37a98cfc95b62aa867"}, {"input": "test-data", "algorithm": "sha256", "checksum": "a186000422feab857329c684e9fe91412b1a5db084100b37a98cfc95b62aa867"}]  
 ``` 
+## Pousser l'Image Docker vers GHCR
+
+```bash ┌──(momoo㉿momoo)-[~/Downloads/microservices_project]
+└─$ docker push ghcr.io/mondataa/docker-micros:latest
+
+The push refers to repository [ghcr.io/mondataa/docker-micros]
+ed8c59133961: Pushed 
+6f7b2c706857: Pushed 
+4794d08a470f: Pushed 
+a3fbd0155aea: Pushed 
+fe5bbd4f8a42: Pushed 
+24f0c2413cd7: Pushed 
+8f9a13bfb118: Pushed 
+0aeeeb7c293d: Pushed 
+c81d4fdb67fc: Pushed 
+0e82d78b3ea1: Pushed 
+301c1bb42cc0: Pushed 
+latest: digest: sha256:60999f5001fdaf61316956a13c4c5500dcb0266bcaba3a4a9264183a31cabc59 size: 2628
+```
