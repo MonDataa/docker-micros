@@ -21,7 +21,7 @@ services:
     ports:
       - "5001:5001"
     volumes:
-      - chunk_data:/chunks
+      - ./chunks:/chunks
 
 volumes:
   chunk_data:

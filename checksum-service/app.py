@@ -5,7 +5,7 @@ import json
 
 app = Flask(__name__)
 
-CHECKSUM_FILE = os.path.join(os.path.dirname(__file__), "../chunks/checksums.json")
+CHECKSUM_FILE = os.path.abspath(os.path.join(os.path.dirname(__file__), "../chunks/checksums.json"))
 
 def load_checksums():
     if os.path.exists(CHECKSUM_FILE):

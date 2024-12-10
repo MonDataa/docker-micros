@@ -3,7 +3,7 @@ import requests
 
 app = Flask(__name__)
 
-# Configuration des microservices
+
 SERVICES = {
     "checksum": "http://checksum-service:5001",
     "database": "http://database-service:5006"
@@ -11,12 +11,10 @@ SERVICES = {
 
 @app.route('/')
 def home():
-    """Point d'entrée de l'API Gateway."""
     return jsonify({"message": "Bienvenue à l'API Gateway"}), 200
 
 @app.route('/checksum', methods=["POST"])
 def checksum():
-    """Redirige les requêtes pour calculer le checksum vers le service de checksum."""
     try:
         data = request.get_json()
         response = requests.post(f"{SERVICES['checksum']}/checksum", json=data)
@@ -26,7 +24,6 @@ def checksum():
 
 @app.route('/list-checksums', methods=["GET"])
 def list_checksums():
-    """Redirige les requêtes pour lister les checksums vers le service de base de données."""
     try:
         response = requests.get(f"{SERVICES['database']}/get-checksums")
         return jsonify(response.json()), response.status_code
