@@ -1,1 +1,1 @@
-[{"input": "test-data", "algorithm": "sha256", "checksum": "a186000422feab857329c684e9fe91412b1a5db084100b37a98cfc95b62aa867"}]
+[{"input": "test-data", "algorithm": "sha256", "checksum": "a186000422feab857329c684e9fe91412b1a5db084100b37a98cfc95b62aa867"}, {"input": "test-data", "algorithm": "sha256", "checksum": "a186000422feab857329c684e9fe91412b1a5db084100b37a98cfc95b62aa867"}, {"input": "test-data", "algorithm": "md5", "checksum": "24346e1b50066607059af36e3b684b24"}]
