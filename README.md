@@ -7,8 +7,6 @@ Ce projet implémente une architecture basée sur des microservices pour fournir
 - **API Gateway** : Point d'entrée unique pour acheminer les requêtes vers les microservices appropriés.
 - **Checksum Service** : Gère la génération et la vérification des checksums pour les fichiers.
 - **Database Service** : Fournit un stockage centralisé pour les métadonnées.
-- **Chunks Service** : Gère la division et l'agrégation des fragments de fichiers.
-
 ---
 
 ## Structure du Projet
@@ -18,10 +16,9 @@ Voici la structure des fichiers et dossiers du projet :
 ---
 
 ## Prérequis
-Avant de commencer, assurez-vous d'avoir les outils suivants installés sur votre machine :
-- **Docker** : [Télécharger Docker](https://www.docker.com/get-started)
-- **Docker Compose** : [Documentation Docker Compose](https://docs.docker.com/compose/install/)
-- **Python 3.9+** : Requis si vous souhaitez exécuter localement certains services.
+- **Docker** 
+- **Docker Compose** 
+- **Python 3.9+** 
 
 ---
 
@@ -30,4 +27,20 @@ Avant de commencer, assurez-vous d'avoir les outils suivants installés sur votr
 ### Étape 1 : Cloner le dépôt
 ```bash
 git clone https://github.com/MonDataa/docker_micros.git
-cd microservices_project ```
+cd microservices_project
+
+### Étape 2 : Docker compose
+```bash 
+curl -X POST -H "Content-Type: application/json" \
+    -d '{"input_string": "test-data", "algorithm": "sha256"}' \
+    http://localhost:5001/checksum
+
+curl -X GET http://localhost:5001/list-checksums
+
+curl -X POST -H "Content-Type: application/json" \
+     -d '{"string": "test-string", "checksum": "ffe65f1d98fafedea3514adc956c8ada5980c6c5d2552fd61f48401aefd5c00e"}' \
+     http://localhost:5006/save-checksum
+
+curl -X POST -H "Content-Type: application/json" -d '{"string": "example", "checksum": "123456"}' http://localhost:5006/save-checksum
+
+curl -X GET http://localhost:5005/list-checksums 
