@@ -42,3 +42,19 @@ curl -X POST -H "Content-Type: application/json" -d '{"string": "example", "chec
 
 curl -X GET http://localhost:5005/list-checksums 
 ```
+
+## Result volume : 
+
+```bash ─$ sudo docker volume ls     
+[sudo] password for momoo: 
+DRIVER    VOLUME NAME
+local     data
+local     microservices_project_chunk_data
+local     todos_data
+```
+```bash
+sudo cat /var/lib/docker/volumes/microservices_project_chunk_data/_data/checksums.json  
+
+[sudo] password for momoo: 
+[{"input": "test-data", "algorithm": "sha256", "checksum": "a186000422feab857329c684e9fe91412b1a5db084100b37a98cfc95b62aa867"}, {"input": "test-data", "algorithm": "sha256", "checksum": "a186000422feab857329c684e9fe91412b1a5db084100b37a98cfc95b62aa867"}, {"input": "test-data", "algorithm": "sha256", "checksum": "a186000422feab857329c684e9fe91412b1a5db084100b37a98cfc95b62aa867"}]  
+``` 
