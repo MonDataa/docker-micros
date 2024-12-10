@@ -28,11 +28,12 @@ Voici la structure des fichiers et dossiers du projet :
 ```bash
 git clone https://github.com/MonDataa/docker_micros.git
 cd microservices_project
+```
 
 ### Étape 2 : Docker compose
 ```bash
 docker-compose up --build
-
+```
 
 ### Étape 3 : Test
 ```bash 
@@ -49,3 +50,4 @@ curl -X POST -H "Content-Type: application/json" \
 curl -X POST -H "Content-Type: application/json" -d '{"string": "example", "checksum": "123456"}' http://localhost:5006/save-checksum
 
 curl -X GET http://localhost:5005/list-checksums 
+```
