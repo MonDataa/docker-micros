@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "5005:5005"
+    depends_on:
+      - database-service
+      - chunk-service
+
+  database-service:
+    build: ./database-service
+    ports:
+      - "5006:5006"
+    volumes:
+      - ./data:/data
+
+  chunk-service:
+    build: ./checksum-service
+    ports:
+      - "5001:5001"
+    volumes:
+      - chunk_data:/chunks
+
+volumes:
+  chunk_data:
