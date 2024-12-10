@@ -44,30 +44,25 @@ jobs:
           username: ${{ secrets.MonDataa }}
           password: ${{ secrets.docker_pro }}
 
-      # Step 5: Normalize tag to lowercase
-      - name: Normalize Docker tag
-        id: tag
-        run: |
-          echo "TAG=ghcr.io/$(echo 'mondataa' | tr '[:upper:]' '[:lower:]')/docker-micros/checksum-service:latest" >> $GITHUB_ENV
-
-      # Step 6: Build Docker image
+      # Step 5: Build Docker image
       - name: Build Docker image
         uses: docker/build-push-action@v4
         with:
           context: ./checksum-service
           push: false
-          tags: ${{ env.TAG }}
+          # Balise corrigée avec noms en minuscules
+          tags: ghcr.io/mondataa/docker-micros/checksum-service:latest
 
-      # Step 7: Test Docker image locally
+      # Step 6: Test Docker image locally
       - name: Test Docker image locally
         run: |
-          docker run --rm ${{ env.TAG }} python --version
+          docker run --rm ghcr.io/mondataa/docker-micros/checksum-service:latest python --version
 
-      # Step 8: Push Docker image
+      # Step 7: Push Docker image
       - name: Push Docker image
         uses: docker/build-push-action@v4
         with:
           context: ./checksum-service
           push: true
-          tags: ${{ env.TAG }}
-
+          # Balise corrigée avec noms en minuscules
+          tags: ghcr.io/mondataa/docker-micros/checksum-service:latest
