@@ -1,8 +1,5 @@
 # Microservices Project
 
-## Description
-Ce projet implémente une architecture basée sur des microservices pour fournir différentes fonctionnalités indépendantes. Chaque microservice est contenu dans son propre dossier avec ses propres dépendances et configurations Docker. Ce projet utilise Docker et Docker Compose pour une orchestration simplifiée.
-
 ### Microservices inclus :
 - **API Gateway** : Point d'entrée unique pour acheminer les requêtes vers les microservices appropriés.
 - **Checksum Service** : Gère la génération et la vérification des checksums pour les fichiers.
@@ -24,18 +21,12 @@ Voici la structure des fichiers et dossiers du projet :
 
 ## Installation et Lancement
 
-### Étape 1 : Cloner le dépôt
-```bash
-git clone https://github.com/MonDataa/docker_micros.git
-cd microservices_project
-```
-
-### Étape 2 : Docker compose
+### Étape 1 : Docker compose
 ```bash
 docker-compose up --build
 ```
 
-### Étape 3 : Test
+### Étape 2 : Test
 ```bash 
 curl -X POST -H "Content-Type: application/json" \
     -d '{"input_string": "test-data", "algorithm": "sha256"}' \
