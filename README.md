@@ -30,6 +30,11 @@ git clone https://github.com/MonDataa/docker_micros.git
 cd microservices_project
 
 ### Étape 2 : Docker compose
+```bash
+docker-compose up --build
+
+
+### Étape 3 : Test
 ```bash 
 curl -X POST -H "Content-Type: application/json" \
     -d '{"input_string": "test-data", "algorithm": "sha256"}' \
