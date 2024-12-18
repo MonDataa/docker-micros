@@ -44,7 +44,10 @@ curl -X GET http://localhost:5005/list-checksums
 ```
 
 ## Result volume : 
-
+<!-- Persistence doesn't work.
+     If you delete the pods and keep the volume the data is still missing
+     Probably some issue with the app itself.
+ -->
 ```bash ─$ sudo docker volume ls     
 [sudo] password for momoo: 
 DRIVER    VOLUME NAME

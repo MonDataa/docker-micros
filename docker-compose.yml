@@ -14,14 +14,15 @@ services:
     ports:
       - "5006:5006"
     volumes:
-      - ./data:/data
+      - db_data:/data
 
   chunk-service:
     build: ./checksum-service
     ports:
       - "5001:5001"
     volumes:
-      - ./chunks:/chunks
+      - chunk_data:/chunks
 
 volumes:
   chunk_data:
+  db_data:

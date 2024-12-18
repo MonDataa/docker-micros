@@ -3,7 +3,7 @@ import requests
 
 app = Flask(__name__)
 
-
+# TODO: Use a dedicated config file or environment variables
 SERVICES = {
     "checksum": "http://checksum-service:5001",
     "database": "http://database-service:5006"
